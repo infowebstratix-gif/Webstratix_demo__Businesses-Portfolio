@@ -1,0 +1,168 @@
+/* Global Theme Custom Colors & Tokens */
+:root {
+    --bg-navbar: #0f172a;
+    --bg-dark-sec: #1e293b;
+    --bg-black-sec: #0f172a;
+    --text-muted: #94a3b8;
+    --primary-glow: #3b82f6;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-black-sec);
+    color: #f8fafc;
+    overflow-x: hidden;
+}
+
+/* Navigation Architecture Styling */
+.navbar {
+    background-color: var(--bg-navbar);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+}
+.nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+.nav-link:hover, .nav-link.active {
+    color: #ffffff !important;
+}
+
+/* Hero Section Framework Layout */
+.hero-section {
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.12), transparent 50%), var(--bg-black-sec);
+    padding: 100px 0;
+    min-height: 85vh;
+}
+.text-muted-custom {
+    color: var(--text-muted);
+}
+.text-gradient {
+    background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.img-hero-main {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-hero-main:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+/* Floating Corporate Cards Component */
+.floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    min-width: 180px;
+    animation: floatingEffect 4s ease-in-out infinite;
+}
+.floating-card.shape-1 {
+    top: 10%;
+    left: -20px;
+}
+.floating-card.shape-2 {
+    bottom: 15%;
+    right: -20px;
+    animation-delay: 2s;
+}
+
+@keyframes floatingEffect {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Section Separation Background Classes */
+.bg-dark-section { background-color: var(--bg-dark-sec); }
+.bg-black-section { background-color: var(--bg-black-sec); }
+
+/* Service Card Component Elements */
+.service-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(59, 130, 246, 0.4) !important;
+    background: rgba(255, 255, 255, 0.05);
+}
+.service-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-glow);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+}
+
+/* Portfolio Module Filtering Pipeline Buttons */
+.btn-filter {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+.btn-filter:hover, .btn-filter.active {
+    background: var(--primary-glow);
+    color: white;
+    border-color: var(--primary-glow);
+}
+
+/* Project Presentation Showcase Cards */
+.project-card {
+    background-color: var(--bg-dark-sec);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.project-card:hover {
+    transform: scale(1.02);
+}
+.badge-category {
+    font-size: 0.75rem;
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Contact Grid & Lead Generation Components */
+.contact-channel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+}
+.contact-form-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 14px;
+}
+.contact-form-card .form-control, .contact-form-card .form-select {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px 14px;
+}
+.contact-form-card .form-control:focus, .contact-form-card .form-select:focus {
+    border-color: var(--primary-glow);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    background: rgba(15, 23, 42, 0.8);
+}
+.contact-form-card .form-control::placeholder {
+    color: #475569;
+}
